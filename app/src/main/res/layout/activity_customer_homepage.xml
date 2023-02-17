@@ -42,7 +42,7 @@
                 android:textSize="30dp"
                 android:textAlignment="textEnd"
                 android:textColor="@color/dark_gray"
-                android:text="All Products"/>
+                android:text="Hello World"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/home_recyclerView"
