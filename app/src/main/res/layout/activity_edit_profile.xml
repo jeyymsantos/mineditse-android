@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".EditProfile"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/btn_editProf_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:onClick="click_edit_back"
+            app:srcCompat="@drawable/ic_arrow_backward_gray" />
+
+        <TextView
+            android:id="@+id/txt_myAcctHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textEnd"
+            android:text="My Account"
+            android:textSize="28dp"
+            android:textColor="@color/dark_blue"
+            android:fontFamily="@font/m_plus_rounded_1c_extrabold"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/custom_imageview"
+        app:srcCompat="@drawable/ic_person"
+        android:elevation="4dp" />
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/txt_fname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:text="First Name"
+                android:textColor="@color/dark_gray"
+                android:textSize="20sp"
+                android:fontFamily="@font/m_plus_rounded_1c_regular"/>
+
+            <EditText
+                android:id="@+id/edit_fname"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/custom_input"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:paddingStart="10dp"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp" >
+
+            <TextView
+                android:id="@+id/txt_lname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:text="Last Name"
+                android:textColor="@color/dark_gray"
+                android:textSize="20sp"
+                android:fontFamily="@font/m_plus_rounded_1c_regular" />
+
+            <EditText
+                android:id="@+id/edit_lname"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/custom_input"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:paddingStart="10dp"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp" >
+
+            <TextView
+                android:id="@+id/txt_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:text="Phone No."
+                android:textColor="@color/dark_gray"
+                android:textSize="20sp"
+                android:fontFamily="@font/m_plus_rounded_1c_regular"/>
+
+            <EditText
+                android:id="@+id/edit_phone_num"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/custom_input"
+                android:ems="10"
+                android:inputType="phone"
+                android:paddingStart="10dp"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:id="@+id/txt_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:text="Email"
+                android:textColor="@color/dark_gray"
+                android:textSize="20sp"
+                android:fontFamily="@font/m_plus_rounded_1c_regular" />
+
+            <EditText
+                android:id="@+id/edit_email"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/custom_input"
+                android:textSize="20sp"
+                android:paddingStart="10dp"
+                android:ems="10"
+                android:inputType="textEmailAddress" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_cancel_edit"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/custom_btn_gray"
+                android:fontFamily="@font/m_plus_rounded_1c_medium"
+                android:onClick="click_cancel_edit"
+                android:text="CANCEL"
+                android:textColor="@color/dark_gray"
+                android:textSize="18sp"
+                android:elevation="4dp" />
+
+            <Button
+                android:id="@+id/btn_save_edit"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/custom_btn_blue"
+                android:fontFamily="@font/m_plus_rounded_1c_bold"
+                android:text="SAVE"
+                android:textSize="20sp"
+                android:elevation="4dp" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

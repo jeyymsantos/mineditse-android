@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MineDitse</string>
+    <string name="who_we_are">Mine Ditse is an online selling business based in Brgy. Santo Cristo, Baliwag, Bulacan, owned by Mrs. Mareschiel Santiago.</string>
+    <string name="who_we_are_sub">Mine Ditse offers wide range of affordable items like clothing - dresses, shirts, jeans, jackets, and even bags and sandals!</string>
+    <string name="our_values">We want YOU to explore YOUR TRUE STYLE!</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigtaion_drawer_close">Close navigation drawer</string>
+</resources>

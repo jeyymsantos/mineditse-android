@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".FindItems"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:onClick="click_find_back"
+            app:srcCompat="@drawable/ic_arrow_backward_blue" />
+
+        <EditText
+            android:id="@+id/prod_search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/custom_search_bar"
+            android:drawableStart="@drawable/ic_search"
+            android:drawablePadding="15dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Find Items..."
+            android:textColorHint="@color/dark_gray"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:fontFamily="@font/m_plus_rounded_1c_regular"
+            android:paddingStart="20dp"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/search_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/prod_search_bar"
+            tools:ignore="NotSibling" />
+    </RelativeLayout>
+
+</LinearLayout>

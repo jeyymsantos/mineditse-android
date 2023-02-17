@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group>
+        <item
+            android:id="@+id/nav_find_items"
+            android:icon="@drawable/ic_search"
+            android:title="Find Items"/>
+        <item
+            android:id="@+id/nav_products"
+            android:icon="@drawable/nav_ic_shirt"
+            android:title="Products"/>
+        <item
+            android:id="@+id/nav_mine_cart"
+            android:icon="@drawable/nav_ic_cart"
+            android:title="Mine Cart"/>
+        <item
+            android:id="@+id/nav_my_orders"
+            android:icon="@drawable/nav_ic_list"
+            android:title="My Orders"/>
+
+        <item android:title="">
+            <menu>
+                <item
+                    android:id="@+id/nav_my_profile"
+                    android:icon="@drawable/nav_ic_account_circle"
+                    android:title="My Profile"/>
+                <item
+                    android:id="@+id/nav_about"
+                    android:icon="@drawable/nav_ic_info"
+                    android:title="About"/>
+                <item
+                    android:id="@+id/nav_logout"
+                    android:icon="@drawable/nav_ic_logout"
+                    android:title="logout"/>
+            </menu>
+        </item>
+
+    </group>
+
+</menu>
