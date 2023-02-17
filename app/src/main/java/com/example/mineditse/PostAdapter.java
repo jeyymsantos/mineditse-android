@@ -15,6 +15,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
@@ -35,7 +37,7 @@ public class PostAdapter extends  RecyclerView.Adapter<PostAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PostAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.product_name.setText(postList.get(position).getProdName());
         holder.product_status.setText(postList.get(position).getProdStatus());
         holder.product_price.setText("Php " + postList.get(position).getProdPrice());
@@ -53,16 +55,20 @@ public class PostAdapter extends  RecyclerView.Adapter<PostAdapter.ViewHolder> {
 //        } catch (Exception e) {
 //            e.printStackTrace();
 //            holder.product_name.setText(e.toString());
-//        }
+//
 
-        if (postList.get(position).getProdPrice().equalsIgnoreCase("Sold")) {
-            holder.product_price.setTextColor(Color.BLUE);
+        Glide.with(holder.product_image.getContext())
+                .load("https://mineditse.store" + postList.get(position).getProdImgPath())
+                .into(holder.product_image);
+
+        if (postList.get(position).getProdStatus().equalsIgnoreCase("Sold")) {
+            holder.product_status.setTextColor(Color.BLUE);
         }
-        if (postList.get(position).getProdPrice().equalsIgnoreCase("Pending")) {
-            holder.product_price.setTextColor(Color.rgb(255, 191, 0));
+        if (postList.get(position).getProdStatus().equalsIgnoreCase("Pending")) {
+            holder.product_status.setTextColor(Color.rgb(255, 191, 0));
         }
-        if (postList.get(position).getProdPrice().equalsIgnoreCase("Available")) {
-            holder.product_price.setTextColor(Color.GREEN);
+        if (postList.get(position).getProdStatus().equalsIgnoreCase("Available")) {
+            holder.product_status.setTextColor(Color.GREEN);
         }
     }
 
@@ -81,8 +87,8 @@ public class PostAdapter extends  RecyclerView.Adapter<PostAdapter.ViewHolder> {
             product_image = itemView.findViewById(R.id.product_image);
             product_name = itemView.findViewById(R.id.product_name);
             bale_id = itemView.findViewById(R.id.bale_id);
-            product_price = itemView.findViewById(R.id.product_status);
-            product_status = itemView.findViewById(R.id.product_price);
+            product_price = itemView.findViewById(R.id.product_price);
+            product_status = itemView.findViewById(R.id.product_status);
         }
     }
 }

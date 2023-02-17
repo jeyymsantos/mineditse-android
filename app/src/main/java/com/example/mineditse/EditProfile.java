@@ -34,12 +34,10 @@ public class EditProfile extends AppCompatActivity {
     }
 
     public void click_cancel_edit(View view) {
-        Intent cancel = new Intent(EditProfile.this, MyAccount.class);
-        startActivity(cancel);
+        finish();
     }
 
     public void click_edit_back(View view) {
-        Intent back = new Intent(EditProfile.this, MyAccount.class);
-        startActivity(back);
+        finish();
     }
 }

@@ -17,6 +17,7 @@ public class MyAccount extends AppCompatActivity {
     public void click_edit_profile(View view) {
         Intent edit = new Intent(MyAccount.this, EditProfile.class);
         startActivity(edit);
+
     }
 
     public void click_change_pw(View view) {

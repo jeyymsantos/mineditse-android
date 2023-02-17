@@ -15,12 +15,10 @@ public class ChangePassword extends AppCompatActivity {
     }
 
     public void click_cancel_change(View view) {
-        Intent cancel = new Intent(ChangePassword.this, MyAccount.class);
-        startActivity(cancel);
+        finish();
     }
 
     public void click_change_back(View view) {
-        Intent back = new Intent(ChangePassword.this, MyAccount.class);
-        startActivity(back);
+        finish();
     }
 }

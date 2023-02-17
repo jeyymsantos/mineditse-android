@@ -56,12 +56,6 @@ public class FindItems extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
                 filterList.clear();
 
                 if(s.toString().isEmpty()) {
@@ -72,13 +66,19 @@ public class FindItems extends AppCompatActivity {
                     Filter(s.toString());
                 }
             }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+
+            }
         });
 
     }
 
     private void Filter(String text) {
         for(PostModel post:postList) {
-            if(post.getProdPrice().equalsIgnoreCase(text)) {
+            if(post.getProdStatus().equalsIgnoreCase(text)) {
                 filterList.add(post);
             }
         }
