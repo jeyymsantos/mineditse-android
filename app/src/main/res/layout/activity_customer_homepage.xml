@@ -32,17 +32,17 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/m_plus_rounded_1c_bold"
                 android:textSize="30dp"
                 android:textAlignment="textEnd"
-                android:textColor="@color/black"
-                android:text="World"/>
+                android:textColor="@color/dark_gray"
+                android:text="All Products"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/home_recyclerView"
