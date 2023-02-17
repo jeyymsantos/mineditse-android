@@ -40,15 +40,16 @@
 
             <EditText
                 android:id="@+id/login_input_email"
-                android:layout_width="340dp"
+                android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
                 android:background="@drawable/custom_input"
                 android:drawableStart="@drawable/ic_email"
                 android:drawablePadding="15dp"
                 android:drawableTint="#FFA6A6A6"
-                android:ems="10"
                 android:fontFamily="@font/m_plus_rounded_1c_regular"
                 android:hint="Email Address"
                 android:inputType="textEmailAddress"
@@ -62,15 +63,16 @@
 
             <EditText
                 android:id="@+id/login_input_password"
-                android:layout_width="340dp"
+                android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
                 android:background="@drawable/custom_input"
                 android:drawableStart="@drawable/ic_lock"
                 android:drawablePadding="15dp"
                 android:drawableTint="#FFA6A6A6"
-                android:ems="10"
                 android:fontFamily="@font/m_plus_rounded_1c_regular"
                 android:hint="Password"
                 android:inputType="textPassword"
@@ -79,12 +81,25 @@
                 android:textColorHint="#FFA6A6A6"
                 android:textSize="20sp" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:textAlignment="textEnd"
+                android:visibility="gone"
+                android:id="@+id/login_view_error"
+                android:textColor="#D30000"/>
+
             <Button
                 android:id="@+id/btn_login"
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="25dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:backgroundTint="#00A3E8"
                 android:fontFamily="@font/m_plus_rounded_1c_extrabold"
                 android:onClick="click_login"
@@ -97,10 +112,12 @@
                 android:textSize="25sp" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="30dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -110,18 +127,18 @@
                     android:fontFamily="@font/m_plus_rounded_1c_regular"
                     android:text="Don't have an account?"
                     android:textColor="#616161"
-                    android:textSize="17sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/txtbtn_createAcct"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="3dp"
                     android:fontFamily="@font/m_plus_rounded_1c_bold"
                     android:onClick="click_createAcct"
                     android:text="Create an account."
                     android:textColor="#00A3E8"
-                    android:textSize="17sp" />
+                    android:textSize="16sp" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
