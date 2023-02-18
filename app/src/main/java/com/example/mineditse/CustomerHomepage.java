@@ -159,9 +159,11 @@ public class CustomerHomepage extends AppCompatActivity implements NavigationVie
                     startActivity(logout);
                     finish();
                 });
+
                 builder.setNegativeButton("Cancel", (DialogInterface.OnClickListener) (dialog, which) -> {
                     dialog.cancel();
                 });
+
                 AlertDialog alertDialog = builder.create();
                 alertDialog.show();
                 break;
