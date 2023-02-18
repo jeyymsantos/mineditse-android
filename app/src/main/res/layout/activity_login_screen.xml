@@ -32,8 +32,8 @@
 
             <ImageView
                 android:id="@+id/img_logo"
-                android:layout_width="370dp"
-                android:layout_height="370dp"
+                android:layout_width="242dp"
+                android:layout_height="244dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
                 app:srcCompat="@drawable/logo" />
@@ -78,6 +78,27 @@
                 android:textColor="#000000"
                 android:textColorHint="#FFA6A6A6"
                 android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="#FF0000"
+                android:layout_marginTop="15dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:text="Sample Error"
+                />
+
+            <ProgressBar
+                android:id="@+id/loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                />
 
             <Button
                 android:id="@+id/btn_login"

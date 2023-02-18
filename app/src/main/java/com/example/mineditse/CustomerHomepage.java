@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -36,6 +37,7 @@ public class CustomerHomepage extends AppCompatActivity implements NavigationVie
     List<PostModel> postList = new ArrayList<>();
     String url = "https://mineditse.store/api/products";
     PostAdapter adapter;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,7 @@ public class CustomerHomepage extends AppCompatActivity implements NavigationVie
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         toolbar.setTitle("Mine Ditse");
         toolbar.setTitleTextAppearance(CustomerHomepage.this, R.style.toolbar_custom_title);
+        sharedPreferences = getSharedPreferences("GDSCNUBaliwag", MODE_PRIVATE);
 
         drawer = findViewById(R.id.home_drawer_layout);
         NavigationView navigationView = findViewById(R.id.home_nav_view);
@@ -133,9 +136,14 @@ public class CustomerHomepage extends AppCompatActivity implements NavigationVie
                 startActivity(about);
                 break;
             case R.id.nav_logout:
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("logged", "false");
+                editor.putString("id", "");
+                editor.apply();
+
                 Intent logout = new Intent(CustomerHomepage.this, LoginScreen.class);
                 startActivity(logout);
-                Toast.makeText(getApplicationContext(), "You have been logged out of your account.", Toast.LENGTH_LONG).show();
+                finish();
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);
