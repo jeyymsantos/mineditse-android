@@ -33,8 +33,6 @@ public class SignUpScreen extends AppCompatActivity{
     TextView tvError;
     Button regbtn;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +52,6 @@ public class SignUpScreen extends AppCompatActivity{
         progressBar = findViewById(R.id.loading);
 
         regbtn = findViewById(R.id.btn_register);
-
         regbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -116,34 +113,13 @@ public class SignUpScreen extends AppCompatActivity{
                 };
                 queue.add(stringRequest);
 
-
-
             }
         });
 
-
-
-
     }
-
-    public void click_register(View view) {
-
-        //getting values on strings
-
-
-
-        Intent reg = new Intent(SignUpScreen.this, LoginScreen.class);
-        startActivity(reg);
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-    }
-
-
-
-
 
     public void click_signin(View view) {
-        Intent signin = new Intent(SignUpScreen.this, LoginScreen.class);
-        startActivity(signin);
+        finish();
         overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
     }
 

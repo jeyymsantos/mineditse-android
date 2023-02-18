@@ -57,6 +57,7 @@ public class LoginScreen extends AppCompatActivity {
     public void click_createAcct(View view) {
         Intent create = new Intent(LoginScreen.this, SignUpScreen.class);
         startActivity(create);
+        tvError.setVisibility(View.GONE);
         overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
     }
 
