@@ -8,6 +8,8 @@ import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,14 +21,17 @@ import com.bumptech.glide.Glide;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
-public class PostAdapter extends  RecyclerView.Adapter<PostAdapter.ViewHolder> {
+public class PostAdapter extends  RecyclerView.Adapter<PostAdapter.ViewHolder> implements Filterable {
 
     List<PostModel> postList;
+    List<PostModel> postListFull;
 
     public PostAdapter(Context context, List<PostModel> postList) {
         this.postList = postList;
+        this.postListFull = new ArrayList<>(postList);
     }
 
     @NonNull
@@ -76,6 +81,39 @@ public class PostAdapter extends  RecyclerView.Adapter<PostAdapter.ViewHolder> {
     public int getItemCount() {
         return postList.size();
     }
+
+    @Override
+    public Filter getFilter() {
+        return itemFilter;
+    }
+
+    private Filter itemFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<PostModel> filteredList =  new ArrayList<>();
+            if (constraint == null || constraint.length() == 0) {
+                filteredList.addAll(postListFull);
+            } else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+
+                for (PostModel item : postListFull) {
+                    if(item.getProdName().toLowerCase().contains(filterPattern)) {
+                        filteredList.add(item);
+                    }
+                }
+            }
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            postList.clear();
+            postList.addAll((List) results.values);
+            notifyDataSetChanged();
+        }
+    };
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 

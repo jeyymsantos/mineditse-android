@@ -3,6 +3,7 @@ package com.example.mineditse;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -13,6 +14,8 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -38,6 +41,7 @@ public class CustomerHomepage extends AppCompatActivity implements NavigationVie
     String url = "https://mineditse.store/api/products";
     PostAdapter adapter;
     SharedPreferences sharedPreferences;
+    SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +53,23 @@ public class CustomerHomepage extends AppCompatActivity implements NavigationVie
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         toolbar.setTitle("Mine Ditse");
         toolbar.setTitleTextAppearance(CustomerHomepage.this, R.style.toolbar_custom_title);
+
+        //searchview
+        searchView = findViewById(R.id.searchView);
+        searchView.clearFocus();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                adapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+
         sharedPreferences = getSharedPreferences("GDSCNUBaliwag", MODE_PRIVATE);
 
         drawer = findViewById(R.id.home_drawer_layout);
@@ -112,14 +133,6 @@ public class CustomerHomepage extends AppCompatActivity implements NavigationVie
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.nav_find_items:
-                Intent findItems = new Intent(CustomerHomepage.this, FindItems.class);
-                startActivity(findItems);
-                break;
-            case R.id.nav_my_orders:
-                //open my order page
-                Toast.makeText(getApplicationContext(), "Show orders history.", Toast.LENGTH_LONG).show();
-                break;
             case R.id.nav_my_profile:
                 Intent myProfile = new Intent(CustomerHomepage.this, MyAccount.class);
                 startActivity(myProfile);
@@ -144,7 +157,11 @@ public class CustomerHomepage extends AppCompatActivity implements NavigationVie
         return true;
     }
 
-
-
-
+    public void onBackPressed() {
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
 }

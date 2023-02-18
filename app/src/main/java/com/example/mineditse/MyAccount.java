@@ -47,7 +47,6 @@ public class MyAccount extends AppCompatActivity {
         tvError = findViewById(R.id.error);
         loading = findViewById(R.id.loading);
 
-        String id = sharedPreferences.getString("cust_id", "");
         String email = sharedPreferences.getString("email", "");
         String password = sharedPreferences.getString("password", "");
         String first_name = sharedPreferences.getString("first_name", "");
