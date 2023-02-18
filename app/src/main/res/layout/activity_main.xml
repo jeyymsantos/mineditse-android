@@ -63,33 +63,25 @@
 
         </LinearLayout>
 
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="25dp"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-            <FrameLayout
+            <Button
+                android:id="@+id/btn_getStarted"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/btn_getStarted"
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:layout_gravity="bottom"
-                    android:layout_margin="25dp"
-                    android:backgroundTint="#00A3E8"
-                    android:fontFamily="@font/m_plus_rounded_1c_extrabold"
-                    android:onClick="click_getStarted"
-                    android:shadowDx="1"
-                    android:shadowDy="1"
-                    android:shadowRadius="5"
-                    android:text="Get Started"
-                    android:textAllCaps="false"
-                    android:textSize="25sp" />
-            </FrameLayout>
-        </LinearLayout>
+                android:layout_height="70dp"
+                android:layout_gravity="bottom"
+                android:layout_margin="25dp"
+                android:backgroundTint="#00A3E8"
+                android:fontFamily="@font/m_plus_rounded_1c_extrabold"
+                android:onClick="click_getStarted"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="5"
+                android:text="Get Started"
+                android:textAllCaps="false"
+                android:textSize="25sp" />
+        </FrameLayout>
     </LinearLayout>
-
 </LinearLayout>
