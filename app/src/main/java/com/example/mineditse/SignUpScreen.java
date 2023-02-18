@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,13 +20,16 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class SignUpScreen extends AppCompatActivity{
 
     EditText rfirsname, rlastname, rphonenum, rstreet, rbarangay, rcity, rprovince, remail, rpassword,rcpassword;
-
+    ProgressBar progressBar;
     TextView tvError;
     Button regbtn;
 
@@ -47,12 +51,15 @@ public class SignUpScreen extends AppCompatActivity{
         remail = findViewById(R.id.signup_input_email);
         rprovince = findViewById(R.id.signup_input_address);
         rpassword = findViewById(R.id.signup_create_password);
+        progressBar = findViewById(R.id.loading);
 
         regbtn = findViewById(R.id.btn_register);
 
         regbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressBar.setVisibility(View.VISIBLE);
+                tvError.setVisibility(View.GONE);
 
                 String fname = rfirsname.getText().toString();
                 String lname = rlastname.getText().toString();
@@ -64,7 +71,6 @@ public class SignUpScreen extends AppCompatActivity{
                 String email = remail.getText().toString();
                 String password = rpassword.getText().toString();
 
-
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
                 String url = "https://mineditse.store/api/create";
 
@@ -72,11 +78,19 @@ public class SignUpScreen extends AppCompatActivity{
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
-                                if(response.equals("success")){
+                                progressBar.setVisibility(View.GONE);
+
+                                if(response.equals("Customer saved successfully!")){
                                     Toast.makeText(SignUpScreen.this, "Registration successful!", Toast.LENGTH_SHORT).show();
                                     finish();
-                                }else{
+                                }else if(response.equals("All fields required!")){
                                     tvError.setText(response);
+                                    tvError.setVisibility(View.VISIBLE);
+                                }else if(response.equals("Email already exist!")){
+                                    tvError.setText(response);
+                                    tvError.setVisibility(View.VISIBLE);
+                                }else{
+                                    tvError.setText("Make sure your email is valid and password is at least 8 characters.");
                                     tvError.setVisibility(View.VISIBLE);
                                 }
                             }

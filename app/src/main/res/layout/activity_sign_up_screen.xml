@@ -53,6 +53,7 @@
                 android:id="@+id/signup_input_fname"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:maxLength="255"
                 android:layout_gravity="center"
                 android:layout_marginTop="25dp"
                 android:layout_marginLeft="35dp"
@@ -77,6 +78,7 @@
                 android:id="@+id/signup_input_lname"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:maxLength="255"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="35dp"
@@ -101,6 +103,7 @@
                 android:id="@+id/signup_input_phoneNum"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:maxLength="11"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="35dp"
@@ -125,6 +128,7 @@
                 android:id="@+id/signup_input_street"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:maxLength="100"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="35dp"
@@ -152,6 +156,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="35dp"
+                android:maxLength="100"
                 android:layout_marginRight="35dp"
                 android:background="@drawable/custom_input"
                 android:drawableStart="@drawable/ic_home"
@@ -176,6 +181,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="35dp"
+                android:maxLength="100"
                 android:layout_marginRight="35dp"
                 android:background="@drawable/custom_input"
                 android:drawableStart="@drawable/ic_location_city"
@@ -199,6 +205,7 @@
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
+                android:maxLength="100"
                 android:layout_marginLeft="35dp"
                 android:layout_marginRight="35dp"
                 android:background="@drawable/custom_input"
@@ -224,6 +231,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="35dp"
+                android:maxLength="255"
                 android:layout_marginRight="35dp"
                 android:background="@drawable/custom_input"
                 android:drawableStart="@drawable/ic_email"
@@ -249,6 +257,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="35dp"
                 android:layout_marginRight="35dp"
+                android:maxLength="255"
                 android:background="@drawable/custom_input"
                 android:drawableStart="@drawable/ic_password"
                 android:drawablePadding="15dp"
@@ -270,8 +279,9 @@
                 android:textColor="#FF0000"
                 android:layout_marginTop="15dp"
                 android:layout_gravity="center"
+                android:textAlignment="center"
                 android:visibility="gone"
-                android:text="Sample Error"
+                android:layout_marginHorizontal="15dp"
                 />
 
             <TextView
@@ -284,6 +294,15 @@
                 android:id="@+id/signup_view_error"
                 android:visibility="gone"
                 android:textColor="#D30000"/>
+
+            <ProgressBar
+                android:id="@+id/loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                />
 
             <Button
                 android:id="@+id/btn_register"
