@@ -4,22 +4,18 @@
     tools:showIn="navigation_view">
 
     <group>
-        <item android:title="">
-            <menu>
-                <item
-                    android:id="@+id/nav_my_profile"
-                    android:icon="@drawable/nav_ic_account_circle"
-                    android:title="My Profile"/>
-                <item
-                    android:id="@+id/nav_about"
-                    android:icon="@drawable/nav_ic_info"
-                    android:title="About"/>
-                <item
-                    android:id="@+id/nav_logout"
-                    android:icon="@drawable/nav_ic_logout"
-                    android:title="Log Out"/>
-            </menu>
-        </item>
+        <item
+            android:id="@+id/nav_my_profile"
+            android:icon="@drawable/nav_ic_account_circle"
+            android:title="My Profile"/>
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/nav_ic_info"
+            android:title="About"/>
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/nav_ic_logout"
+            android:title="Log Out"/>
     </group>
 
 </menu>
