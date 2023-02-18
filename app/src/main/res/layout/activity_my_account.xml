@@ -39,8 +39,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="15dp"
-        android:background="@drawable/custom_imageview"
-        app:srcCompat="@drawable/ic_person" />
+        app:srcCompat="@drawable/logo" />
 
     <TableLayout
         android:layout_width="wrap_content"
@@ -128,6 +127,32 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="15dp" >
+
+            <TextView
+                android:id="@+id/txt_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:text="Address"
+                android:textColor="@color/dark_gray"
+                android:textSize="20sp"
+                android:fontFamily="@font/m_plus_rounded_1c_regular"/>
+
+            <TextView
+                android:id="@+id/view_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="address"
+                android:textColor="@color/dark_gray"
+                android:textSize="20sp"
+                android:fontFamily="@font/m_plus_rounded_1c_medium"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_marginTop="15dp">
 
             <TextView
@@ -172,6 +197,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:text="password_hidden"
+                android:inputType="textPassword"
+                android:maxLength="8"
                 android:textColor="@color/dark_gray"
                 android:textSize="20sp"
                 android:fontFamily="@font/m_plus_rounded_1c_medium"/>

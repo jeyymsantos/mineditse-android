@@ -116,13 +116,6 @@ public class CustomerHomepage extends AppCompatActivity implements NavigationVie
                 Intent findItems = new Intent(CustomerHomepage.this, FindItems.class);
                 startActivity(findItems);
                 break;
-            case R.id.nav_products:
-                drawer.closeDrawer(GravityCompat.START);
-                break;
-            case R.id.nav_mine_cart:
-                //open cart overlay
-                Toast.makeText(getApplicationContext(), "Open Cart", Toast.LENGTH_LONG).show();
-                break;
             case R.id.nav_my_orders:
                 //open my order page
                 Toast.makeText(getApplicationContext(), "Show orders history.", Toast.LENGTH_LONG).show();

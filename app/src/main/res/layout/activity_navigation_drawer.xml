@@ -9,7 +9,7 @@
     android:fitsSystemWindows="true"
     android:background="@color/white"
     tools:openDrawer="start"
-    tools:context="com.example.mineditse.NavigationDrawer">
+    tools:context="com.example.mineditse.CustomerHomepage">
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -79,11 +79,26 @@ public class LoginScreen extends AppCompatActivity {
                         try{
                             JSONObject user = new JSONObject(response);
                             String id = user.getString("cust_id");
-
+                            String first_name = user.getString("first_name");
+                            String last_name = user.getString("last_name");
+                            String street = user.getString("cust_street");
+                            String barangay = user.getString("cust_barangay");
+                            String city = user.getString("cust_city");
+                            String province = user.getString("cust_province");
+                            String phone = user.getString("phone_number");
 
                             SharedPreferences.Editor editor = sharedPreferences.edit();
                             editor.putString("logged", "true");
                             editor.putString("id", id);
+                            editor.putString("email", email);
+                            editor.putString("password", password);
+                            editor.putString("first_name", first_name);
+                            editor.putString("last_name", last_name);
+                            editor.putString("street", street);
+                            editor.putString("barangay", barangay);
+                            editor.putString("city", city);
+                            editor.putString("province", province);
+                            editor.putString("phone", phone);
                             editor.apply();
 
                             Intent i = new Intent(LoginScreen.this, CustomerHomepage.class);
