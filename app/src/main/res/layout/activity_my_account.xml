@@ -37,8 +37,6 @@
         android:layout_width="220dp"
         android:layout_height="220dp"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="15dp"
         app:srcCompat="@drawable/logo" />
 
     <TableLayout
@@ -63,7 +61,7 @@
 
             <TextView
                 android:id="@+id/view_first_name"
-                android:layout_width="wrap_content"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:text="first_name"
@@ -89,7 +87,7 @@
 
             <TextView
                 android:id="@+id/view_last_name"
-                android:layout_width="wrap_content"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:text="last_name"
@@ -115,7 +113,7 @@
 
             <TextView
                 android:id="@+id/view_phone_num"
-                android:layout_width="wrap_content"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:text="phone_number"
@@ -133,7 +131,7 @@
                 android:id="@+id/txt_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left|center"
+                android:layout_gravity="left|start"
                 android:text="Address"
                 android:textColor="@color/dark_gray"
                 android:textSize="20sp"
@@ -141,7 +139,7 @@
 
             <TextView
                 android:id="@+id/view_address"
-                android:layout_width="wrap_content"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:text="address"
@@ -167,7 +165,7 @@
 
             <TextView
                 android:id="@+id/view_email"
-                android:layout_width="match_parent"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:text="email_address"
@@ -183,7 +181,7 @@
 
             <TextView
                 android:id="@+id/txt_password"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|center"
                 android:text="Password"

@@ -34,175 +34,302 @@
             android:fontFamily="@font/m_plus_rounded_1c_extrabold"/>
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="220dp"
-        android:layout_height="220dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="15dp"
-        android:background="@drawable/custom_imageview"
-        app:srcCompat="@drawable/ic_person"
-        android:elevation="4dp" />
-
-    <TableLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="20dp">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <TextView
-                android:id="@+id/txt_fname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left|center"
-                android:text="First Name"
-                android:textColor="@color/dark_gray"
-                android:textSize="20sp"
-                android:fontFamily="@font/m_plus_rounded_1c_regular"/>
-
-            <EditText
-                android:id="@+id/edit_fname"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginLeft="15dp"
-                android:background="@drawable/custom_input"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:paddingStart="10dp"
-                android:textColor="#000000"
-                android:textSize="20sp" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="15dp" >
-
-            <TextView
-                android:id="@+id/txt_lname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left|center"
-                android:text="Last Name"
-                android:textColor="@color/dark_gray"
-                android:textSize="20sp"
-                android:fontFamily="@font/m_plus_rounded_1c_regular" />
-
-            <EditText
-                android:id="@+id/edit_lname"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginLeft="15dp"
-                android:background="@drawable/custom_input"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:paddingStart="10dp"
-                android:textColor="#000000"
-                android:textSize="20sp" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="15dp" >
-
-            <TextView
-                android:id="@+id/txt_phone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left|center"
-                android:text="Phone No."
-                android:textColor="@color/dark_gray"
-                android:textSize="20sp"
-                android:fontFamily="@font/m_plus_rounded_1c_regular"/>
-
-            <EditText
-                android:id="@+id/edit_phone_num"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginLeft="15dp"
-                android:background="@drawable/custom_input"
-                android:ems="10"
-                android:inputType="phone"
-                android:paddingStart="10dp"
-                android:textColor="#000000"
-                android:textSize="20sp" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="15dp">
-
-            <TextView
-                android:id="@+id/txt_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left|center"
-                android:text="Email"
-                android:textColor="@color/dark_gray"
-                android:textSize="20sp"
-                android:fontFamily="@font/m_plus_rounded_1c_regular" />
-
-            <EditText
-                android:id="@+id/edit_email"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginLeft="15dp"
-                android:background="@drawable/custom_input"
-                android:textSize="20sp"
-                android:paddingStart="10dp"
-                android:ems="10"
-                android:inputType="textEmailAddress" />
-
-        </TableRow>
-
-    </TableLayout>
-
-    <FrameLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center"
-            android:layout_marginBottom="20dp"
-            android:orientation="horizontal">
+            android:orientation="vertical" >
 
-            <Button
-                android:id="@+id/btn_cancel_edit"
-                android:layout_width="170dp"
+            <ImageView
+                android:id="@+id/my_account_logo"
+                android:layout_width="240dp"
+                android:layout_height="240dp"
+                android:layout_gravity="center"
+                android:elevation="4dp"
+                app:srcCompat="@drawable/logo" />
+
+            <TableLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/custom_btn_gray"
-                android:fontFamily="@font/m_plus_rounded_1c_medium"
-                android:onClick="click_cancel_edit"
-                android:text="CANCEL"
-                android:textColor="@color/dark_gray"
-                android:textSize="18sp"
-                android:elevation="4dp" />
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="35dp">
 
-            <Button
-                android:id="@+id/btn_save_edit"
-                android:layout_width="170dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/custom_btn_blue"
-                android:fontFamily="@font/m_plus_rounded_1c_bold"
-                android:text="SAVE"
-                android:textSize="20sp"
-                android:elevation="4dp" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
+                    <TextView
+                        android:id="@+id/txt_fname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center"
+                        android:fontFamily="@font/m_plus_rounded_1c_regular"
+                        android:text="First Name"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/edit_fname"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/custom_input"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:paddingStart="10dp"
+                        android:textColor="#000000"
+                        android:textSize="20sp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:id="@+id/txt_lname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center"
+                        android:fontFamily="@font/m_plus_rounded_1c_regular"
+                        android:text="Last Name"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/edit_lname"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/custom_input"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:paddingStart="10dp"
+                        android:textColor="#000000"
+                        android:textSize="20sp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:id="@+id/txt_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center"
+                        android:fontFamily="@font/m_plus_rounded_1c_regular"
+                        android:text="Phone No."
+                        android:textColor="@color/dark_gray"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/edit_phone_num"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/custom_input"
+                        android:ems="10"
+                        android:inputType="phone"
+                        android:paddingStart="10dp"
+                        android:textColor="#000000"
+                        android:textSize="20sp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:id="@+id/txt_street"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center"
+                        android:fontFamily="@font/m_plus_rounded_1c_regular"
+                        android:text="Street"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/edit_street"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/custom_input"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:paddingStart="10dp"
+                        android:textColor="#000000"
+                        android:textSize="20sp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:id="@+id/txt_barangay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center"
+                        android:fontFamily="@font/m_plus_rounded_1c_regular"
+                        android:text="Barangay"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/edit_barangay"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/custom_input"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:paddingStart="10dp"
+                        android:textColor="#000000"
+                        android:textSize="20sp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:id="@+id/txt_city"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center"
+                        android:fontFamily="@font/m_plus_rounded_1c_regular"
+                        android:text="City"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/edit_city"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/custom_input"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:paddingStart="10dp"
+                        android:textColor="#000000"
+                        android:textSize="20sp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:id="@+id/txt_province"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center"
+                        android:fontFamily="@font/m_plus_rounded_1c_regular"
+                        android:text="Province"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/edit_province"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/custom_input"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:paddingStart="10dp"
+                        android:textColor="#000000"
+                        android:textSize="20sp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:id="@+id/txt_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center"
+                        android:fontFamily="@font/m_plus_rounded_1c_regular"
+                        android:text="Email"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/edit_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/custom_input"
+                        android:ems="10"
+                        android:inputType="textEmailAddress"
+                        android:paddingStart="10dp"
+                        android:textSize="20sp" />
+
+                </TableRow>
+
+            </TableLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_cancel_edit"
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/custom_btn_gray"
+                        android:elevation="4dp"
+                        android:fontFamily="@font/m_plus_rounded_1c_medium"
+                        android:onClick="click_cancel_edit"
+                        android:text="CANCEL"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="18sp" />
+
+                    <Button
+                        android:id="@+id/btn_save_edit"
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/custom_btn_blue"
+                        android:elevation="4dp"
+                        android:fontFamily="@font/m_plus_rounded_1c_bold"
+                        android:text="SAVE"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+            </FrameLayout>
         </LinearLayout>
-    </FrameLayout>
+    </ScrollView>
 
 </LinearLayout>
