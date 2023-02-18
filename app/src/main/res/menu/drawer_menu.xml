@@ -4,15 +4,6 @@
     tools:showIn="navigation_view">
 
     <group>
-        <item
-            android:id="@+id/nav_find_items"
-            android:icon="@drawable/ic_search"
-            android:title="Find Items"/>
-        <item
-            android:id="@+id/nav_my_orders"
-            android:icon="@drawable/nav_ic_list"
-            android:title="My Orders"/>
-
         <item android:title="">
             <menu>
                 <item
@@ -29,7 +20,6 @@
                     android:title="logout"/>
             </menu>
         </item>
-
     </group>
 
 </menu>

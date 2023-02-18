@@ -78,7 +78,7 @@ public class FindItems extends AppCompatActivity {
 
     private void Filter(String text) {
         for(PostModel post:postList) {
-            if(post.getProdStatus().equalsIgnoreCase(text)) {
+            if(post.getProdName().equalsIgnoreCase(text)) {
                 filterList.add(post);
             }
         }
