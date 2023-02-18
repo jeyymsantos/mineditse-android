@@ -78,7 +78,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:layout_gravity="bottom"
-                    android:layout_margin="25dp"
+                    android:layout_margin="23dp"
                     android:backgroundTint="#00A3E8"
                     android:fontFamily="@font/m_plus_rounded_1c_extrabold"
                     android:onClick="click_getStarted"

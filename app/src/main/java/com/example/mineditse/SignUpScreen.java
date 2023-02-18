@@ -28,7 +28,7 @@ import java.util.Map;
 
 public class SignUpScreen extends AppCompatActivity{
 
-    EditText rfirsname, rlastname, rphonenum, rstreet, rbarangay, rcity, rprovince, remail, rpassword,rcpassword;
+    EditText rfirsname, rlastname, rphonenum, rstreet, rbarangay, rcity, rprovince, remail, rpassword;
     ProgressBar progressBar;
     TextView tvError;
     Button regbtn;

@@ -1,11 +1,13 @@
 package com.example.mineditse;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -80,7 +82,7 @@ public class EditProfile extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                click_edit_save();
+                click_edit_save("Edit Profile", "Are you sure you want to edit your profile?");
             }
         });
     }
@@ -95,72 +97,85 @@ public class EditProfile extends AppCompatActivity {
         finish();
     }
 
-    private void click_edit_save() {
-        loading.setVisibility(View.VISIBLE);
-        tvError.setVisibility(View.GONE);
+    private void click_edit_save(String title, String message) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(EditProfile.this);
+        builder.setMessage(message);
+        builder.setTitle(title);
+        builder.setCancelable(false);
+        builder.setPositiveButton("Yes", (DialogInterface.OnClickListener) (dialog, which) -> {
+            loading.setVisibility(View.VISIBLE);
+            tvError.setVisibility(View.GONE);
 
-        String id = sharedPreferences.getString("id", "");
-        String first_name = etFirstName.getText().toString();
-        String last_name = etLastName.getText().toString();
-        String street = etStreet.getText().toString();
-        String barangay = etBarangay.getText().toString();
-        String city = etCity.getText().toString();
-        String province = etProvince.getText().toString();
-        String phone_number = etPhone.getText().toString();
+            String id = sharedPreferences.getString("id", "");
+            String first_name = etFirstName.getText().toString();
+            String last_name = etLastName.getText().toString();
+            String street = etStreet.getText().toString();
+            String barangay = etBarangay.getText().toString();
+            String city = etCity.getText().toString();
+            String province = etProvince.getText().toString();
+            String phone_number = etPhone.getText().toString();
 
-        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-        String url = "https://mineditse.store/api/edit";
+            RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+            String url = "https://mineditse.store/api/edit";
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        loading.setVisibility(View.GONE);
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            loading.setVisibility(View.GONE);
 
-                        if(!response.equals("Customer updated successfully!")){
-                            tvError.setText(response);
-                            tvError.setVisibility(View.VISIBLE);
-                            return;
+                            if(!response.equals("Customer updated successfully!")){
+                                tvError.setText(response);
+                                tvError.setVisibility(View.VISIBLE);
+                                return;
+                            }
+
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putString("first_name", first_name);
+                            editor.putString("last_name", last_name);
+                            editor.putString("street", street);
+                            editor.putString("barangay", barangay);
+                            editor.putString("city", city);
+                            editor.putString("province", province);
+                            editor.putString("phone", phone_number);
+                            editor.apply();
+
+                            Toast.makeText(EditProfile.this, "Update Successful!", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(EditProfile.this, MyAccount.class));
+                            finish();
+                            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
                         }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    loading.setVisibility(View.GONE);
+                    tvError.setText(error.getLocalizedMessage());
+                    tvError.setVisibility(View.VISIBLE);
+                }
+            }) {
+                protected Map<String, String> getParams() {
+                    Map<String, String> paramV = new HashMap<>();
+                    paramV.put("id", id);
+                    paramV.put("first_name", first_name);
+                    paramV.put("last_name", last_name);
+                    paramV.put("phone", phone_number);
+                    paramV.put("street", street);
+                    paramV.put("barangay", barangay);
+                    paramV.put("city", city);
+                    paramV.put("province", province);
+                    return paramV;
+                }
+            };
+            queue.add(stringRequest);
+        });
 
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putString("first_name", first_name);
-                        editor.putString("last_name", last_name);
-                        editor.putString("street", street);
-                        editor.putString("barangay", barangay);
-                        editor.putString("city", city);
-                        editor.putString("province", province);
-                        editor.putString("phone", phone_number);
-                        editor.apply();
+        builder.setNegativeButton("No", (DialogInterface.OnClickListener) (dialog, which) -> {
+            dialog.cancel();
+        });
 
-                        Toast.makeText(EditProfile.this, "Update Successful!", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(EditProfile.this, MyAccount.class));
-                        finish();
-                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                loading.setVisibility(View.GONE);
-                tvError.setText(error.getLocalizedMessage());
-                tvError.setVisibility(View.VISIBLE);
-            }
-        }) {
-            protected Map<String, String> getParams() {
-                Map<String, String> paramV = new HashMap<>();
-                paramV.put("id", id);
-                paramV.put("first_name", first_name);
-                paramV.put("last_name", last_name);
-                paramV.put("phone", phone_number);
-                paramV.put("street", street);
-                paramV.put("barangay", barangay);
-                paramV.put("city", city);
-                paramV.put("province", province);
-                return paramV;
-            }
-        };
-        queue.add(stringRequest);
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 
 

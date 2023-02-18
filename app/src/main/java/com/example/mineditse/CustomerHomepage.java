@@ -2,6 +2,7 @@ package com.example.mineditse;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -143,14 +145,25 @@ public class CustomerHomepage extends AppCompatActivity implements NavigationVie
                 startActivity(about);
                 break;
             case R.id.nav_logout:
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("logged", "false");
-                editor.putString("id", "");
-                editor.apply();
+                AlertDialog.Builder builder = new AlertDialog.Builder(CustomerHomepage.this);
+                builder.setTitle("Log out of your account?");
+                builder.setCancelable(false);
+                builder.setPositiveButton("Logout", (DialogInterface.OnClickListener) (dialog, which) -> {
 
-                Intent logout = new Intent(CustomerHomepage.this, LoginScreen.class);
-                startActivity(logout);
-                finish();
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("logged", "false");
+                    editor.putString("id", "");
+                    editor.apply();
+
+                    Intent logout = new Intent(CustomerHomepage.this, LoginScreen.class);
+                    startActivity(logout);
+                    finish();
+                });
+                builder.setNegativeButton("Cancel", (DialogInterface.OnClickListener) (dialog, which) -> {
+                    dialog.cancel();
+                });
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);

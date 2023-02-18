@@ -8,12 +8,10 @@
     android:orientation="vertical"
     tools:context=".MyAccount">
 
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -230,14 +228,11 @@
             android:layout_marginVertical="15dp"
             android:visibility="gone" />
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="30dp"
                 android:layout_marginBottom="20dp"
                 android:orientation="horizontal">
 
@@ -264,9 +259,7 @@
                     android:onClick="click_edit_profile"
                     android:text="Edit Profile"
                     android:textSize="18sp" />
-
             </LinearLayout>
-        </FrameLayout>
 
     </LinearLayout>
 
