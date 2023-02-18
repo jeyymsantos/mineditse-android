@@ -6,7 +6,7 @@
     android:background="#191970"
     android:gravity="bottom"
     android:padding="10dp"
-    android:layout_marginBottom="180dp"
+
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
