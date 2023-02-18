@@ -78,6 +78,14 @@ public class LoginScreen extends AppCompatActivity {
 
                         try{
                             JSONObject user = new JSONObject(response);
+                            String type = user.getString("cust_type");
+
+                            if(type.equals("DEACTIVATED")){
+                                tvError.setText("Sorry, your account is deactivated. Reach out Mine Ditse to reactivate your account.");
+                                tvError.setVisibility(View.VISIBLE);
+                                return;
+                            }
+
                             String id = user.getString("cust_id");
                             String first_name = user.getString("first_name");
                             String last_name = user.getString("last_name");

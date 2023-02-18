@@ -58,7 +58,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginBottom="35dp">
+                android:layout_marginBottom="15dp">
 
                 <TableRow
                     android:layout_width="match_parent"
@@ -81,6 +81,7 @@
                         android:layout_marginLeft="15dp"
                         android:background="@drawable/custom_input"
                         android:ems="10"
+                        android:maxLength="255"
                         android:inputType="textPersonName"
                         android:paddingStart="10dp"
                         android:textColor="#000000"
@@ -110,6 +111,7 @@
                         android:layout_marginLeft="15dp"
                         android:background="@drawable/custom_input"
                         android:ems="10"
+                        android:maxLength="255"
                         android:inputType="textPersonName"
                         android:paddingStart="10dp"
                         android:textColor="#000000"
@@ -139,6 +141,7 @@
                         android:layout_marginLeft="15dp"
                         android:background="@drawable/custom_input"
                         android:ems="10"
+                        android:maxLength="11"
                         android:inputType="phone"
                         android:paddingStart="10dp"
                         android:textColor="#000000"
@@ -168,6 +171,7 @@
                         android:layout_marginLeft="15dp"
                         android:background="@drawable/custom_input"
                         android:ems="10"
+                        android:maxLength="100"
                         android:inputType="text"
                         android:paddingStart="10dp"
                         android:textColor="#000000"
@@ -197,6 +201,7 @@
                         android:layout_marginLeft="15dp"
                         android:background="@drawable/custom_input"
                         android:ems="10"
+                        android:maxLength="100"
                         android:inputType="text"
                         android:paddingStart="10dp"
                         android:textColor="#000000"
@@ -226,6 +231,7 @@
                         android:layout_marginLeft="15dp"
                         android:background="@drawable/custom_input"
                         android:ems="10"
+                        android:maxLength="100"
                         android:inputType="text"
                         android:paddingStart="10dp"
                         android:textColor="#000000"
@@ -255,6 +261,7 @@
                         android:layout_marginLeft="15dp"
                         android:background="@drawable/custom_input"
                         android:ems="10"
+                        android:maxLength="100"
                         android:inputType="text"
                         android:paddingStart="10dp"
                         android:textColor="#000000"
@@ -262,35 +269,27 @@
 
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="15dp">
-
-                    <TextView
-                        android:id="@+id/txt_email"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left|center"
-                        android:fontFamily="@font/m_plus_rounded_1c_regular"
-                        android:text="Email"
-                        android:textColor="@color/dark_gray"
-                        android:textSize="20sp" />
-
-                    <EditText
-                        android:id="@+id/edit_email"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="15dp"
-                        android:background="@drawable/custom_input"
-                        android:ems="10"
-                        android:inputType="textEmailAddress"
-                        android:paddingStart="10dp"
-                        android:textSize="20sp" />
-
-                </TableRow>
-
             </TableLayout>
+
+            <TextView
+                android:id="@+id/error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="#FF0000"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:text="Sample Error"
+                />
+
+            <ProgressBar
+                android:id="@+id/loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                />
 
             <FrameLayout
                 android:layout_width="match_parent"

@@ -123,6 +123,7 @@ public class CustomerHomepage extends AppCompatActivity implements NavigationVie
             case R.id.nav_my_profile:
                 Intent myProfile = new Intent(CustomerHomepage.this, MyAccount.class);
                 startActivity(myProfile);
+                finish();
                 break;
             case R.id.nav_about:
                 Intent about = new Intent(CustomerHomepage.this, AboutPage.class);
@@ -143,12 +144,7 @@ public class CustomerHomepage extends AppCompatActivity implements NavigationVie
         return true;
     }
 
-    public void onBackPressed() {
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
+
+
 
 }
