@@ -125,6 +125,8 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="30dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -134,18 +136,18 @@
                     android:fontFamily="@font/m_plus_rounded_1c_regular"
                     android:text="Don't have an account?"
                     android:textColor="#616161"
-                    android:textSize="17sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/txtbtn_createAcct"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="3dp"
                     android:fontFamily="@font/m_plus_rounded_1c_bold"
                     android:onClick="click_createAcct"
                     android:text="Create an account."
                     android:textColor="#00A3E8"
-                    android:textSize="17sp" />
+                    android:textSize="16sp" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

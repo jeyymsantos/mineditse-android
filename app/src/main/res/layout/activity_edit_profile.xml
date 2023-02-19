@@ -52,8 +52,8 @@
                 app:srcCompat="@drawable/logo" />
 
             <TableLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
@@ -76,9 +76,10 @@
 
                     <EditText
                         android:id="@+id/edit_fname"
-                        android:layout_width="match_parent"
+                        android:layout_width="240dp"
                         android:layout_height="40dp"
                         android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
                         android:background="@drawable/custom_input"
                         android:ems="10"
                         android:maxLength="255"
@@ -106,9 +107,10 @@
 
                     <EditText
                         android:id="@+id/edit_lname"
-                        android:layout_width="match_parent"
+                        android:layout_width="240dp"
                         android:layout_height="40dp"
                         android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
                         android:background="@drawable/custom_input"
                         android:ems="10"
                         android:maxLength="255"
@@ -136,9 +138,10 @@
 
                     <EditText
                         android:id="@+id/edit_phone_num"
-                        android:layout_width="match_parent"
+                        android:layout_width="240dp"
                         android:layout_height="40dp"
                         android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
                         android:background="@drawable/custom_input"
                         android:ems="10"
                         android:maxLength="11"
@@ -166,9 +169,10 @@
 
                     <EditText
                         android:id="@+id/edit_street"
-                        android:layout_width="match_parent"
+                        android:layout_width="240dp"
                         android:layout_height="40dp"
                         android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
                         android:background="@drawable/custom_input"
                         android:ems="10"
                         android:maxLength="100"
@@ -196,9 +200,10 @@
 
                     <EditText
                         android:id="@+id/edit_barangay"
-                        android:layout_width="match_parent"
+                        android:layout_width="240dp"
                         android:layout_height="40dp"
                         android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
                         android:background="@drawable/custom_input"
                         android:ems="10"
                         android:maxLength="100"
@@ -226,9 +231,10 @@
 
                     <EditText
                         android:id="@+id/edit_city"
-                        android:layout_width="match_parent"
+                        android:layout_width="240dp"
                         android:layout_height="40dp"
                         android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
                         android:background="@drawable/custom_input"
                         android:ems="10"
                         android:maxLength="100"
@@ -256,9 +262,10 @@
 
                     <EditText
                         android:id="@+id/edit_province"
-                        android:layout_width="match_parent"
+                        android:layout_width="240dp"
                         android:layout_height="40dp"
                         android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
                         android:background="@drawable/custom_input"
                         android:ems="10"
                         android:maxLength="100"
