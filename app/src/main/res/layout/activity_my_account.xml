@@ -69,6 +69,7 @@
                     android:layout_width="240dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
                     android:fontFamily="@font/m_plus_rounded_1c_medium"
                     android:text="first_name"
                     android:textColor="@color/dark_gray"
@@ -92,9 +93,10 @@
 
                 <TextView
                     android:id="@+id/view_last_name"
-                    android:layout_width="250dp"
+                    android:layout_width="240dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
                     android:fontFamily="@font/m_plus_rounded_1c_medium"
                     android:text="last_name"
                     android:textColor="@color/dark_gray"
@@ -118,9 +120,10 @@
 
                 <TextView
                     android:id="@+id/view_phone_num"
-                    android:layout_width="250dp"
+                    android:layout_width="240dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
                     android:fontFamily="@font/m_plus_rounded_1c_medium"
                     android:text="phone_number"
                     android:textColor="@color/dark_gray"
@@ -144,9 +147,10 @@
 
                 <TextView
                     android:id="@+id/view_address"
-                    android:layout_width="250dp"
+                    android:layout_width="240dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
                     android:fontFamily="@font/m_plus_rounded_1c_medium"
                     android:text="address"
                     android:textColor="@color/dark_gray"
@@ -170,9 +174,10 @@
 
                 <TextView
                     android:id="@+id/view_email"
-                    android:layout_width="250dp"
+                    android:layout_width="240dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
                     android:fontFamily="@font/m_plus_rounded_1c_medium"
                     android:text="email_address"
                     android:textColor="@color/dark_gray"
@@ -196,9 +201,10 @@
 
                 <TextView
                     android:id="@+id/view_password"
-                    android:layout_width="250dp"
+                    android:layout_width="240dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
                     android:fontFamily="@font/m_plus_rounded_1c_medium"
                     android:inputType="textPassword"
                     android:maxLength="8"
